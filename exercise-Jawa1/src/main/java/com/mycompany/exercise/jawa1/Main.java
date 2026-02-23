@@ -1,29 +1,50 @@
 package com.mycompany.exercise.jawa1;
-// /com/mycompany/exercise/jawa1/Main.java;
-// make sure to put your package all of anything before you put your code or import
+
+import java.util.Scanner;
 
 
 public class Main {
 
+    public static Hero hero;
+    public static Weapon shield;
+    public static Weapon sword;
+    public static final Scanner scanner = new Scanner(System.in);
+    public static final Menu menu = new Menu();
     public static void main(String[] args) {
-        Hero hero1 = new Hero(); /* [1] */
-        HeroINT/* [2] */ hero1int /*[3] */= new HeroINT/* [4] */("lukman", 100, 50, 12); 
-        // in short we make another object named hero1int from class HeroINT() in file HeroINT,java
-                                                               
-        hero1int.display()/* [5] */;
-        System.out.println("-------------------------");
-        hero1.display();
 
+        hero = new HeroINT("Ezra");
+        shield = new Shield();
+        sword = new Sword();
+
+        boolean running = true;
+
+        while (running) {
+
+            menu.menuInterface();
+
+
+            String input = scanner.nextLine().trim();
+
+            switch (input) {
+                case "1":
+                    System.out.println("later yaa...");
+
+                case "2":
+                    ((HeroINT) hero).equip(shield);
+                    break;
+
+                case "3":
+                    ((HeroINT) hero).equip(sword);
+                    break;
+
+                case "4":
+                    hero.display();
+                    break;
+
+                default:
+                    running = false;
+                    System.out.println("Game Over.");
+            }
+        }
     }
 }
-
-/*
-Footnote
-
-[1] : in short here, we make a new object called hero1 from file Hero, and the class Hero()
-[2] : left side is name of your file
-[3] : left side is name of your new object 
-[4] : left side is name of your class target to be declared in your object
-[5] : we called our object there is hero1int and the function inside called display()
-
-*/
