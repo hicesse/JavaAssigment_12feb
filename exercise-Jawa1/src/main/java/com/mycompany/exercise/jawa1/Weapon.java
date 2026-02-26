@@ -6,7 +6,7 @@ public abstract class Weapon {
     private int def;
     private int intel;
     private int agil;
-    private String name;
+    String name;
 
     public Weapon(int atk, int def, int intel, int agil, String name) {
         this.atk = atk;
@@ -23,6 +23,10 @@ public abstract class Weapon {
     public String getName() { return name; }
 
     public abstract void getInfo();
+
+    public boolean isSameWeapon(Weapon other) {
+    return this.name.equals(other.name);
+}
 }
 
 class Sword extends Weapon {

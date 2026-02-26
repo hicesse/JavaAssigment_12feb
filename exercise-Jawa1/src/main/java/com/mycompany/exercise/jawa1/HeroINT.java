@@ -4,7 +4,7 @@ package com.mycompany.exercise.jawa1;
 public class HeroINT extends Hero {
 
     public HeroINT(String name) {
-        super(name, 80, 10, 5, 8, 25, 5);
+        super(name, 80, 10, 5, 8, 25, 5); // even he's a mage, they still have lack of strength
     }
 
     @Override
@@ -29,18 +29,18 @@ public class HeroINT extends Hero {
 
     public void equip(Weapon weapon) {
 
-    if (equippedWeapon != null) {
-        System.out.println("You already equipped a weapon!");
-        return;
+        if (equippedWeapon != null && equippedWeapon.isSameWeapon(weapon)){
+            System.out.printf("\nYou already equipped the %s!\n", equippedWeapon.name);
+            return;
+        }
+
+        equippedWeapon = weapon;
+
+        this.baseAtk += weapon.getAtk();
+        this.defense += weapon.getDef();
+        this.intelligence += weapon.getIntel();
+        this.agility += weapon.getAgil();
+
+        System.out.printf("\n%s equipped %s", this.name, weapon.getName());
     }
-
-    equippedWeapon = weapon;
-
-    this.baseAtk += weapon.getAtk();
-    this.defense += weapon.getDef();
-    this.intelligence += weapon.getIntel();
-    this.agility += weapon.getAgil();
-
-    System.out.printf("\n%s equipped %s", this.name, weapon.getName());
-}
 }
