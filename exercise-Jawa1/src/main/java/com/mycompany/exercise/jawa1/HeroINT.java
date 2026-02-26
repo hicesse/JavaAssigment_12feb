@@ -41,6 +41,6 @@ public class HeroINT extends Hero {
         this.intelligence += weapon.getIntel();
         this.agility += weapon.getAgil();
 
-        System.out.printf("\n%s equipped %s", this.name, weapon.getName());
+        System.out.printf("\n%s equipped %s", this.name, weapon.name);
     }
 }

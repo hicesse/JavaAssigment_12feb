@@ -20,7 +20,6 @@ public abstract class Weapon {
     public int getDef() { return def; }
     public int getIntel() { return intel; }
     public int getAgil() { return agil; }
-    public String getName() { return name; }
 
     public abstract void getInfo();
 
