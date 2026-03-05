@@ -128,3 +128,5 @@ This project successfully demonstrates:
 * Clean separation of logic
 
 The design follows OOP principles and prepares the system for future expansion such as additional hero types, enemies, and combat mechanics.
+---
+@hicesse
